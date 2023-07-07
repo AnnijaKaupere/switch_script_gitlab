@@ -1,25 +1,5 @@
 
 
-----------------------IP_ADDRESS: 90.100.52.16----------------------
-Device Unreachable/SSH not enabled
-
-
-
-----------------------IP_ADDRESS: 15.1.11.15----------------------
-Device Unreachable/SSH not enabled
-
-
-
-----------------------IP_ADDRESS: 16.15.29.65----------------------
-Device Unreachable/SSH not enabled
-
-
-
-----------------------IP_ADDRESS: 2.1.2.1----------------------
-Device Unreachable/SSH not enabled
-
-
-
-----------------------IP_ADDRESS: 127.0.0.1----------------------
+----------------------IP_ADDRESS: 111111----------------------
 Device Unreachable/SSH not enabled
 
