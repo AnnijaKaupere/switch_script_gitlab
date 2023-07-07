@@ -1,199 +1,25 @@
 
 
-----------------------IP_ADDRESS: 10.70.100.51----------------------
-
------version info-----
-Active-image: flash://system/images/_image1.bin
-  Version: 4.0.13.3
-  Commit: 7854b638
-  Build: 1 (master)
-  MD5 Digest: d30c99ac0ba2aeae8cb2b9541529668d
-  Date: 18-Dec-2019
-  Time: 19:22:44
-Inactive-image: flash://system/images/image1.bin
-  Version: 4.0.13.3
-  Commit: 7854b638
-  Build: 1 (master)
-  MD5 Digest: d30c99ac0ba2aeae8cb2b9541529668d
-  Date: 18-Dec-2019
-  Time: 19:22:44
-
------interfaces counters info-----
-      Port       InUcastPkts  InMcastPkts  InBcastPkts    InOctets   
----------------- ------------ ------------ ------------ ------------ 
-    gi1/0/7         710639       12929         456       132547736   
-
-      Port       OutUcastPkts OutMcastPkts OutBcastPkts  OutOctets   
----------------- ------------ ------------ ------------ ------------ 
-    gi1/0/7        1510272       966696      1613173     1790503213  
-
-Alignment Errors: 0
-FCS Errors: 0
-Single Collision Frames: 0
-Multiple Collision Frames: 0
-SQE Test Errors: 0
-Deferred Transmissions: 0
-Late Collisions: 0
-Excessive Collisions: 0
-Carrier Sense Errors: 0
-Oversize Packets: 0
-Internal MAC Rx Errors: 0
-Symbol Errors: 0
-Received Pause Frames: 0
-Transmitted Pause Frames: 0
-      Port       InUcastPkts  InMcastPkts  InBcastPkts    InOctets   
----------------- ------------ ------------ ------------ ------------ 
-    gi1/0/8        1534525      1044944      1690413     1821649398  
-
-      Port       OutUcastPkts OutMcastPkts OutBcastPkts  OutOctets   
----------------- ------------ ------------ ------------ ------------ 
-    gi1/0/8         730398       21208         574       141746661   
-
-Alignment Errors: 0
-FCS Errors: 0
-Single Collision Frames: 0
-Multiple Collision Frames: 0
-SQE Test Errors: 0
-Deferred Transmissions: 0
-Late Collisions: 0
-Excessive Collisions: 0
-Carrier Sense Errors: 0
-Oversize Packets: 0
-Internal MAC Rx Errors: 0
-Symbol Errors: 0
-Received Pause Frames: 0
-Transmitted Pause Frames: 0
-
------lldp neighbors info-----
-System capability legend:
-B - Bridge; R - Router; W - Wlan Access Point; T - telephone;
-D - DOCSIS Cable Device; H - Host; r - Repeater;
-TP - Two Ports MAC Relay; S - S-VLAN; C - C-VLAN; O - Other
-
-  Port        Device ID        Port ID       System Name    Capabilities  TTL  
---------- ----------------- ------------- ----------------- ------------ ----- 
-gi1/0/8   e4:5a:d4:2a:09:40   gi1/0/35    eltex_local_1.350     B, R      108  
-                                                  0                            
+----------------------IP_ADDRESS: 90.100.52.16----------------------
+Device Unreachable/SSH not enabled
 
 
------configuration info-----
-no spanning-tree
-!
-vlan database
- vlan 1000-1001
-exit
-!
-loopback-detection enable
-!
-errdisable recovery interval 120
-errdisable recovery cause loopback-detection
-errdisable recovery cause port-security
-errdisable recovery cause dot1x-src-address
-errdisable recovery cause acl-deny
-errdisable recovery cause stp-bpdu-guard
-errdisable recovery cause stp-loopback-guard
-errdisable recovery cause unidirectional-link
-errdisable recovery cause storm-control
-errdisable recovery cause l2pt-guard
-errdisable recovery cause pvst
-!
-ip dhcp snooping
-ip dhcp snooping vlan 1001
-!
-hostname eltex_local_1.4618
-!
-management access-list MGMT
- permit ip-source 10.2.33.0 mask 255.255.255.0 service telnet
- permit ip-source 10.70.0.0 mask 255.255.0.0 service telnet
- permit ip-source 10.49.9.0 mask 255.255.255.0 service telnet
- permit ip-source 10.2.33.0 mask 255.255.255.0 service snmp
- permit ip-source 10.70.0.0 mask 255.255.0.0 service snmp
- permit ip-source 10.49.9.0 mask 255.255.255.0 service snmp
- permit ip-source 10.20.20.0 mask 255.255.255.0 service telnet
- permit ip-source 10.49.100.0 mask 255.255.255.0 service telnet
- permit ip-source 10.49.110.0 mask 255.255.255.0 service telnet
- permit ip-source 10.49.254.0 mask 255.255.255.0 service telnet
- permit ip-source 10.20.20.0 mask 255.255.255.0 service snmp
- permit ip-source 10.49.100.0 mask 255.255.255.0 service snmp
- permit ip-source 10.49.110.0 mask 255.255.255.0 service snmp
- permit ip-source 10.49.254.0 mask 255.255.255.0 service snmp
- permit ip-source 10.49.9.0 mask 255.255.255.0 service ssh
-exit
-!
-management access-class MGMT
-!
-logging host 10.70.100.6 facility local0 severity debugging
-logging cli-commands
-no logging console
-!
-enable password level 15 encrypted 5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8
-!
-username admin password encrypted d033e22ae348aeb5660fc2140aec35850c4da997 privilege 15
-username monitor password encrypted 4395b49b8affb1ca952ffc175d3ec5a7acf26d77
-!
-ip ssh port 22
-ip ssh server
-ip ssh-client source-interface vlan 1000
-ip ssh pubkey-auth auto-login
-ip ssh-client username user
-encrypted ip ssh-client password RTfVftohWzkj+bRMkALik3t+Q4iVSEEJ1VUolT4eOXk=
-!
-snmp-server server
-!
-interface gigabitethernet1/0/1
- shutdown
-exit
-!
-interface gigabitethernet1/0/2
- shutdown
-exit
-!
-interface gigabitethernet1/0/3
- shutdown
-exit
-!
-interface gigabitethernet1/0/4
- shutdown
-exit
-!
-interface gigabitethernet1/0/5
- shutdown
-exit
-!
-interface gigabitethernet1/0/6
- shutdown
-exit
-!
-interface gigabitethernet1/0/7
- loopback-detection enable
- storm-control broadcast kbps 512
- spanning-tree disable
- spanning-tree bpdu filtering
- switchport access vlan 1001
- no lldp transmit
- no lldp receive
- switchport forbidden default-vlan
-exit
-!
-interface gigabitethernet1/0/8
- description "--- to 10.70.100.38 ---"
- ip dhcp snooping trust
- switchport mode trunk
- switchport trunk allowed vlan add 1000-1001
- lldp optional-tlv port-desc sys-name sys-desc sys-cap
- lldp management-address automatic
-exit
-!
-interface vlan 1
- no ip address dhcp
- shutdown
-exit
-!
-interface vlan 1000
- ip address 10.70.100.51 255.255.0.0
-exit
-!
-!
-ip default-gateway 10.70.0.1
-!
-end
+
+----------------------IP_ADDRESS: 15.1.11.15----------------------
+Device Unreachable/SSH not enabled
+
+
+
+----------------------IP_ADDRESS: 16.15.29.65----------------------
+Device Unreachable/SSH not enabled
+
+
+
+----------------------IP_ADDRESS: 2.1.2.1----------------------
+Device Unreachable/SSH not enabled
+
+
+
+----------------------IP_ADDRESS: 127.0.0.1----------------------
+Device Unreachable/SSH not enabled
+
